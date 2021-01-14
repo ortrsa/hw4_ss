@@ -102,7 +102,7 @@ void print(Node* root, char *s , int i){
     }
     else if(root ->bol == 1){
         s[i] = '\0';
-        printf("%s \t %lu\n", s ,root ->count);
+        printf("%s %lu\n", s ,root ->count);
     
     }
     
@@ -119,7 +119,7 @@ void printr(Node* root , char* s , int i){
     if(isempty(root)){
         
         s[i] = '\0';
-        printf("%s \t %lu \n", s ,root ->count);
+        printf("%s %lu \n", s ,root ->count);
         return;
     }
     else if(root ->bol == 1){
