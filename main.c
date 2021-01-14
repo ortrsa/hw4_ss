@@ -6,9 +6,20 @@
 //
 
 #include <stdio.h>
+#include "frequency.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+int main(int argc, char const *argv[]) {
+        
+        
+    if(argc<=1){
+        frequencyp(0);
+    }
+    else if(*argv[1]=='r') {
+        frequencyp(1);
+    }
+    
+    
+    
+    
     return 0;
 }
