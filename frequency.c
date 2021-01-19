@@ -11,7 +11,9 @@
 
 
 
-
+//reads from the file while the is more to read and fills the tree bt PutInTree function.
+// then checks if we need to print it reversed or normall and print it how it should be.
+// we also check if the letters are lowered case and if not we lower case them.
 void frequencyp(int r){
     
     Node *root=new_Node('\0');
@@ -64,7 +66,7 @@ void frequencyp(int r){
     
 }
 
-
+//frees the memory 
 void free_nodes(Node* n)
 {
     if (n == (void*)0)
@@ -77,7 +79,8 @@ void free_nodes(Node* n)
 
     free(n);
 }
-
+//gets a char and a node if the char is exist already at the node array we return the node that we need
+// else we create a new node we that char and put it in the node array and return the new node.
 Node* Put_in_Tree(char word ,Node* root){
     if (root->children[word-'a']==(void *)0){
         Node *temp = new_Node(word);
@@ -92,7 +95,10 @@ Node* Put_in_Tree(char word ,Node* root){
     
 
 }
-
+//prints the words that are in the tree in a dicionary order from a to z and every word we print with the number of times
+// the word was at the text.
+//going from the root to his childrens array from 0 to NUM_LETTERS and if its not null we send it
+// in a recursion to the function ro and by that we get the right order.
 void print(Node* root, char *s , int i){
     if(isempty(root)){
         
@@ -115,6 +121,7 @@ void print(Node* root, char *s , int i){
     
     
 }
+//workd just like the function above but we are going from the last letter to the first.
 void printr(Node* root , char* s , int i){
     if(isempty(root)){
         
@@ -138,7 +145,7 @@ void printr(Node* root , char* s , int i){
     
 }
 
-
+//returns 1 if there arent nodes at the given node array and 0 otherwise.
 int isempty(Node* node){
     for (int i =0; i<NUM_LETTERS ; i++) {
         if(node ->children[i]) return 0;
@@ -149,7 +156,7 @@ int isempty(Node* node){
     
 }
 
-
+// creates a new node with the given char.
 Node* new_Node(char a){
     Node *n = (Node*)malloc(sizeof(Node));
     n->Letter = a;

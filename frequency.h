@@ -11,7 +11,8 @@
 #include <stdio.h>
 
 #define NUM_LETTERS 26
-
+// Node conatains a char that define him , a number of the words that ends in that letter,
+// an array of all the chars at the a,b,c... and a number 0/1 to know if its an end of a word.
 typedef struct Node{
     char Letter;
     long unsigned int count;
